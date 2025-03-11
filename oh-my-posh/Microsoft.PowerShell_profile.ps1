@@ -2,7 +2,7 @@
 Import-Module posh-git
 
 # Oh My Posh (Use the new method)
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/Paradox.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/powerlevel10k_rainbow.omp.json" | Invoke-Expression
 
 # Aliases
 Set-Alias vim nvim

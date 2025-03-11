@@ -32,4 +32,7 @@ config.window_frame = {
 config.default_cursor_style = "BlinkingUnderline"
 config.cursor_thickness = 2
 
+-- for window platform
+-- config.default_prog = { 'powershell' }
+
 return config

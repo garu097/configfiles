@@ -19,6 +19,11 @@ If prompted to install from an untrusted repository, type **A** (Yes to All).
 winget install JanDeDobbeleer.OhMyPosh -s winget
 ```
 
+### Install icon
+```
+Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser -Force
+```
+
 ## 2. Configure
 Edit your PowerShell profile:
 ```

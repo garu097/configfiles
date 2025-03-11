@@ -1,6 +1,6 @@
 # Import modules
 Import-Module posh-git
-
+Import-Module Terminal-Icons
 # Oh My Posh (Use the new method)
 oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/powerlevel10k_rainbow.omp.json" | Invoke-Expression
 

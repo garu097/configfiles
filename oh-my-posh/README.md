@@ -19,9 +19,13 @@ If prompted to install from an untrusted repository, type **A** (Yes to All).
 winget install JanDeDobbeleer.OhMyPosh -s winget
 ```
 
-### Install icon
+### Install other module
 ```
+winget install junegunn.fzf
+Install-Module -Name z -Scope CurrentUser -AllowClobber  -Force
 Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser -Force
+Install-Module PSReadLine -Force -SkipPublisherCheck -Scope CurrentUser
+Install-Module -Name PSFzf -Scope CurrentUser -Force
 ```
 
 ## 2. Configure

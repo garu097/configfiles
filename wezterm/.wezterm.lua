@@ -13,7 +13,7 @@ config.window_padding = {
 }
 
 config.color_scheme = 'Tokyo Night'
-config.font = wezterm.font("0xProto Nerd Font Mono", {weight = "Bold", stretch=$
+config.font = wezterm.font("0xProto Nerd Font Mono", {weight = "Bold",stretch="Expanded"})
 config.font_size = 13
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
@@ -21,8 +21,8 @@ config.window_decorations = "RESIZE"
 config.window_frame = {
     border_left_width = "0.28cell",
     border_right_width = "0.28cell",
-    border_bottom_height = "0.15cell",
-    border_top_height = "0.15cell",
+    border_bottom_height = "0.14cell",
+    border_top_height = "0.14cell",
     border_left_color = color_frame,
     border_right_color = color_frame,
     border_bottom_color = color_frame,

@@ -15,6 +15,7 @@ config.window_padding = {
 config.color_scheme = 'Tokyo Night'
 config.font = wezterm.font("0xProto Nerd Font Mono", {weight = "Bold",stretch="Expanded"})
 config.font_size = 13
+config.line_height = 1.2
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 

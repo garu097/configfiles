@@ -31,6 +31,10 @@ config.window_frame = {
 }
 config.default_cursor_style = "BlinkingUnderline"
 config.cursor_thickness = 2
+config.keys = {
+    { key = 'f', mods= 'CTRL|CMD', action = wezterm.action.ToggleFullScreen},
+    { key = 'A', mods = 'CTRL|SHIFT', action = wezterm.action.QuickSelect } -- Default QuickSelect key bind (Ctrl-Shift-Space) gets capture by something else
+}
 
 -- for window platform
 -- config.default_prog = { 'powershell' }

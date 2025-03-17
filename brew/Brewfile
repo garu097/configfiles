@@ -13,6 +13,7 @@ brew "zsh-syntax-highlighting"
 brew "zsh-autosuggestions"
 brew "zsh-autocomplete"
 brew "google-cloud-sdk"
+brew "zoxide"
 
 cask "alt-tab"
 cask "docker"

@@ -11,7 +11,7 @@ vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "white" })
 vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "gray" })
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
-vim.opt.colorcolumn = "97"
+-- vim.opt.colorcolumn = "97"
 
 vim.g.mapleader = " "
 -- move selected lines

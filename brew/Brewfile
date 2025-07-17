@@ -16,6 +16,9 @@ brew "zsh-autocomplete"
 brew "google-cloud-sdk"
 brew "zoxide"
 
+# nvim
+brew "ripgrep" #need for telescope nvim
+
 cask "alt-tab"
 cask "docker"
 cask "google-chrome"

@@ -21,8 +21,8 @@ ssh-add
 
 # 3. Test SSH connection
 echo "🔌 Testing SSH connection..."
-ssh $SSH_TARGET "echo '✅ Connected to $SSH_TARGET'"
+ssh $SSH_TARGET
 
-# 4. Kiểm tra kết nối đến GitLab
-echo "🔍 Testing GitLab SSH access..."
-ssh -T git@gitlab.com
+# # 4. Kiểm tra kết nối đến GitLab
+# echo "🔍 Testing GitLab SSH access..."
+# ssh -T git@gitlab.com

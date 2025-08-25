@@ -4,7 +4,7 @@ return {
 		dependencies = {
 			"williamboman/mason.nvim",
 			"jay-babu/mason-null-ls.nvim", -- cầu nối Mason <-> none-ls
-            "nvimtools/none-ls-extras.nvim",
+			"nvimtools/none-ls-extras.nvim",
 		},
 		config = function()
 			local null_ls = require("null-ls")
@@ -34,7 +34,7 @@ return {
 				},
 			})
 
-            vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+			vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
 		end,
 	},
 }

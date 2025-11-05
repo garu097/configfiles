@@ -15,6 +15,8 @@ brew "zsh-autosuggestions"
 brew "zsh-autocomplete"
 brew "google-cloud-sdk"
 brew "zoxide"
+brew "docker"
+brew "docker-compose"
 
 # nvim
 brew "ripgrep" #need for telescope nvim

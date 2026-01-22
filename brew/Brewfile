@@ -17,6 +17,7 @@ brew "google-cloud-sdk"
 brew "zoxide"
 brew "docker"
 brew "docker-compose"
+brew "mole"
 
 # nvim
 brew "ripgrep" #need for telescope nvim

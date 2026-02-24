@@ -37,6 +37,7 @@ export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
 # Homebrew Initialization
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+eval "$(zoxide init zsh)"
 # Source
 source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

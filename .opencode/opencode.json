@@ -1,6 +1,11 @@
 {
     "$schema": "https://opencode.ai/config.json",
     "theme": "tokyonight",
+    "skills": {
+        "paths": [
+            ".opencode/skills"
+        ]
+    },
     "autoupdate": true,
     "plugin": [
         // "opencode-antigravity-auth@latest",
@@ -8,6 +13,15 @@
         "@franlol/opencode-md-table-formatter@0.0.3"
     ],
     "provider": {
+        "anthropic": {
+            "options": {
+                "baseURL": "http://pro-x.io.vn/v1",
+                "apiKey": "sk-41e188fe9bb4cbbc2da2c9156d98e53fe29db014508986590ba0658ba9863edc",
+                "headers": {
+                    "authorization": "Bearer sk-41e188fe9bb4cbbc2da2c9156d98e53fe29db014508986590ba0658ba9863edc"
+                }
+            }
+        },
         "google": {
             "models": {
                 "antigravity-gemini-3-pro": {

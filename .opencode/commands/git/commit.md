@@ -1,7 +1,6 @@
 ---
 description: Smart conventional commit for opencode-agents (Default No-Lint)
 agent: build
-model: google/antigravity-gemini-3-flash
 ---
 
 # Commit Command

@@ -1,40 +1,19 @@
-
 ---
 description: Review PR changes and suggest improvements
 ---
 
 # PR Review
 
-Review the changes in this PR and provide feedback:
+Review PR changes:
 
 !`git diff origin/main...HEAD`
 !`git log --oneline origin/main...HEAD`
 
-## Review Checklist
+Check:
+1. **Quality** - clean code, naming, no duplication, error handling
+2. **Security** - no secrets, input validation
+3. **Performance** - efficient algorithms
+4. **Tests** - new tests, existing pass
+5. **Docs** - comments, README
 
-Please analyze the changes and check:
-
-1. **Code Quality**
-   - Clean, readable code
-   - Consistent naming conventions
-   - No code duplication
-   - Proper error handling
-
-2. **Security**
-   - No exposed secrets or credentials
-   - Input validation where needed
-   - Proper authentication/authorization
-
-3. **Performance**
-   - No obvious performance issues
-   - Efficient algorithms and data structures
-
-4. **Testing**
-   - Are there tests for new functionality?
-   - Do existing tests still pass?
-
-5. **Documentation**
-   - Are comments helpful and up-to-date?
-   - Is README updated if needed?
-
-Provide specific, actionable feedback with line references.
+Provide actionable feedback with line references.

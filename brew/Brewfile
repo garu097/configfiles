@@ -1,19 +1,19 @@
 tap "felixkratz/formulae"
-tap "homebrew/bundle"
 tap "nikitabobko/tap"
 
 brew "eza"
 brew "git"
 brew "htop"
 brew "jq"
+brew "openjdk"
 brew "neovim"
 brew "nvm"
 brew "tmux"
 brew "zsh"
+brew "powerlevel10k"
 brew "zsh-syntax-highlighting"
 brew "zsh-autosuggestions"
 brew "zsh-autocomplete"
-brew "google-cloud-sdk"
 brew "zoxide"
 brew "docker"
 brew "docker-compose"
@@ -22,6 +22,8 @@ brew "mole"
 # nvim
 brew "ripgrep" #need for telescope nvim
 
+# application
+cask "font-0xproto-nerd-font"
 cask "alt-tab"
 cask "docker"
 cask "google-chrome"

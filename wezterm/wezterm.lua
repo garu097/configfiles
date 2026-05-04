@@ -2,6 +2,7 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 local color_frame = 'pink'
 -- window setting
+config.use_ime = false
 config.window_background_opacity = 0.97
 config.macos_window_background_blur = 20
 config.window_padding = {

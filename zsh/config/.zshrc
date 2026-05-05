@@ -21,8 +21,8 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="${HOME}/.pyenv/shims:${PATH}"
 
 # Load NVM
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+export NVM_DIR="$HOME/.nvm"
+source $(brew --prefix nvm)/nvm.sh
 
 # Add paths to PATH variable
 export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
@@ -33,7 +33,6 @@ export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
 export PATH="$(brew --prefix)/opt/python@3/libexec/bin:$PATH"
 export PATH="/opt/homebrew/opt/jpeg/bin:$PATH"
-export PATH="/opt/homebrew/opt/node@20/bin:$PATH"
 
 # Homebrew Initialization
 eval "$(/opt/homebrew/bin/brew shellenv)"

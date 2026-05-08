@@ -1,0 +1,16 @@
+settings.local.json
+
+backups/
+cache/
+file-history/
+plans/
+plugins/
+projects/
+session-env/
+sessions/
+shell-snapshots/
+tasks/
+telemetry/
+history.jsonl
+mcp-needs-auth-cache.json
+policy-limits.json

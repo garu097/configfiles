@@ -31,6 +31,16 @@ ln -sf "$(pwd)/wezterm/wezterm.lua" ~/.wezterm.lua
 ln -sf "$(pwd)/tmux/tmux.conf" ~/.tmux.conf
 ln -sf "$(pwd)/.opencode" ~/.opencode
 
+# Link Claude Code config (per-item, keep runtime data in ~/.claude)
+mkdir -p ~/.claude
+for item in "$(pwd)"/.claude/*; do
+    [ -e "$item" ] || continue
+    name=$(basename "$item")
+    [ "$name" = ".gitignore" ] && continue
+    [ "$name" = "settings.local.json" ] && continue
+    ln -sf "$item" "$HOME/.claude/$name"
+done
+
 source ~/.zshrc
 
 chmod +x ./ssh/server_access_ssh.sh           # đảm bảo có quyền thực thi

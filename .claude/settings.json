@@ -1,0 +1,14 @@
+{
+  "enabledPlugins": {
+    "understand-anything@understand-anything": true
+  },
+  "extraKnownMarketplaces": {
+    "understand-anything": {
+      "source": {
+        "source": "github",
+        "repo": "Lum1104/Understand-Anything"
+      }
+    }
+  },
+  "theme": "auto"
+}

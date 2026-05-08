@@ -10,5 +10,11 @@
       }
     }
   },
-  "theme": "auto"
+  "theme": "auto",
+  "teammateMode": "tmux",
+  "permissions": {
+    "allow": [
+      "Bash(tmux *)"
+    ]
+  }
 }

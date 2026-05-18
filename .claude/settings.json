@@ -1,20 +1,59 @@
 {
-  "enabledPlugins": {
-    "understand-anything@understand-anything": true
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
-  "extraKnownMarketplaces": {
-    "understand-anything": {
-      "source": {
-        "source": "github",
-        "repo": "Lum1104/Understand-Anything"
-      }
-    }
-  },
-  "theme": "auto",
-  "teammateMode": "tmux",
   "permissions": {
     "allow": [
       "Bash(tmux *)"
     ]
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "p=$(cat); printf '%s\\n' \"--- Notification $(date '+%F %T') ---\" \"$p\" >> ~/.claude/hooks.log; msg=$(echo \"$p\" | jq -r '.message // \"Claude Code needs attention\"' | tr -d '\"' | cut -c1-200); afplay -v 3 /System/Library/Sounds/Glass.aiff >/dev/null 2>&1 & osascript -e \"display notification \\\"$msg\\\" with title \\\"Claude Code\\\"\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "p=$(cat); printf '%s\\n' \"--- Stop $(date '+%F %T') ---\" \"$p\" >> ~/.claude/hooks.log; msg=$(echo \"$p\" | jq -r '.last_assistant_message // \"Task done\"' | tr -d '\"' | cut -c1-200); afplay -v 3 /System/Library/Sounds/Hero.aiff >/dev/null 2>&1 & osascript -e \"display notification \\\"$msg\\\" with title \\\"Claude Code · Done\\\"\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "p=$(cat); printf '%s\\n' \"--- SubagentStop $(date '+%F %T') ---\" \"$p\" >> ~/.claude/hooks.log; msg=$(echo \"$p\" | jq -r '.last_assistant_message // \"Subagent done\"' | tr -d '\"' | cut -c1-200); afplay -v 3 /System/Library/Sounds/Submarine.aiff >/dev/null 2>&1 & osascript -e \"display notification \\\"$msg\\\" with title \\\"Claude Code · Subagent\\\"\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "TeammateIdle": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "p=$(cat); printf '%s\\n' \"--- TeammateIdle $(date '+%F %T') ---\" \"$p\" >> ~/.claude/hooks.log; name=$(echo \"$p\" | jq -r '.teammate_name // .name // .from // \"teammate\"' | tr -d '\"' | cut -c1-40); msg=$(echo \"$p\" | jq -r '.last_assistant_message // .message // \"idle\"' | tr -d '\"' | cut -c1-180); afplay -v 3 /System/Library/Sounds/Submarine.aiff >/dev/null 2>&1 & osascript -e \"display notification \\\"$msg\\\" with title \\\"Claude Code Team · @$name\\\"\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  },
+  "effortLevel": "high",
+  "skipDangerousModePermissionPrompt": true,
+  "theme": "auto",
+  "teammateMode": "tmux",
+  "preferences": {
+    "tmuxSplitPanes": true
   }
 }

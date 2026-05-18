@@ -19,6 +19,7 @@ brew "zoxide"
 brew "docker"
 brew "docker-compose"
 brew "mole"
+brew "terminal-notifier"
 
 # nvim
 brew "ripgrep" #need for telescope nvim

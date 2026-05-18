@@ -1,4 +1,5 @@
 local wezterm = require 'wezterm'
+local act = wezterm.action
 local config = wezterm.config_builder()
 local color_frame = 'pink'
 -- window setting
@@ -20,6 +21,7 @@ config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 config.initial_rows = 40
 config.initial_cols = 280
+config.enable_csi_u_key_encoding = true
 config.window_frame = {
     border_left_width = "0.28cell",
     border_right_width = "0.28cell",
@@ -33,9 +35,11 @@ config.window_frame = {
 
 config.default_cursor_style = "BlinkingUnderline"
 config.cursor_thickness = 2
+config.send_composed_key_when_left_alt_is_pressed = false
 config.keys = {
     { key = 'f', mods= 'CTRL|CMD', action = wezterm.action.ToggleFullScreen},
-    { key = 'A', mods = 'CTRL|SHIFT', action = wezterm.action.QuickSelect } -- Default QuickSelect key bind (Ctrl-Shift-Space) gets capture by something else
+    { key = 'A', mods = 'CTRL|SHIFT', action = wezterm.action.QuickSelect }, -- Default QuickSelect key bind (Ctrl-Shift-Space) gets capture by something else
+    { key = 'Enter', mods = 'ALT', action = act.SendString '\n'},
 }
 
 config.window_close_confirmation = 'NeverPrompt'

@@ -8,14 +8,13 @@
     },
     "autoupdate": true,
     "plugin": [
-        // "opencode-antigravity-auth@latest",
         "opencode-antigravity-auth@1.6.0",
         "@franlol/opencode-md-table-formatter@0.0.3"
     ],
     "provider": {
         "anthropic": {
             "options": {
-                "baseURL": "http://pro-x.io.vn/v1",
+                "baseURL": "http://localhost:8317/v1",
                 "apiKey": "sk-41e188fe9bb4cbbc2da2c9156d98e53fe29db014508986590ba0658ba9863edc",
                 "headers": {
                     "authorization": "Bearer sk-41e188fe9bb4cbbc2da2c9156d98e53fe29db014508986590ba0658ba9863edc"
@@ -150,7 +149,7 @@
                             }
                         }
                     }
-                },
+                }
             }
         }
     }

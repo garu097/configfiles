@@ -39,7 +39,7 @@ config.send_composed_key_when_left_alt_is_pressed = false
 config.keys = {
     { key = 'f', mods= 'CTRL|CMD', action = wezterm.action.ToggleFullScreen},
     { key = 'A', mods = 'CTRL|SHIFT', action = wezterm.action.QuickSelect }, -- Default QuickSelect key bind (Ctrl-Shift-Space) gets capture by something else
-    { key = 'Enter', mods = 'ALT', action = act.SendString '\n'},
+    { key = 'Enter', mods = 'ALT', action = act.SendString '\x1b\r' },
 }
 
 config.window_close_confirmation = 'NeverPrompt'

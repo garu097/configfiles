@@ -1,52 +1,94 @@
-# Enable Powerlevel10k instant prompt.
+# ───────────────────────────────────────────────────────────
+# Powerlevel10k instant prompt (must stay near top)
+# ───────────────────────────────────────────────────────────
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
-# Path to your oh-my-zsh installation.
+# ───────────────────────────────────────────────────────────
+# Homebrew (sets PATH/MANPATH/INFOPATH for /opt/homebrew)
+# ───────────────────────────────────────────────────────────
+eval "$(/opt/homebrew/bin/brew shellenv)"
+BREW_PREFIX="$(brew --prefix)"
+
+# ───────────────────────────────────────────────────────────
+# Oh My Zsh
+# ───────────────────────────────────────────────────────────
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_DISABLE_COMPFIX=true
-# ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
-# Environment Variables
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export ANDROID_SDK_ROOT=$ANDROID_HOME
-export JAVA_HOME=$(brew --prefix)/opt/openjdk/libexec/openjdk.jdk/Contents/Home
+# ───────────────────────────────────────────────────────────
+# Environment
+# ───────────────────────────────────────────────────────────
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export ANDROID_SDK_ROOT="$ANDROID_HOME"
+export JAVA_HOME="$BREW_PREFIX/opt/openjdk/libexec/openjdk.jdk/Contents/Home"
 export GEM_HOME="$HOME/.gem"
 export NVM_DIR="$HOME/.nvm"
-export PATH="${HOME}/.pyenv/shims:${PATH}"
+export PYENV_ROOT="$HOME/.pyenv"
 
-# Load NVM
-export NVM_DIR="$HOME/.nvm"
-source $(brew --prefix nvm)/nvm.sh
+# ───────────────────────────────────────────────────────────
+# PATH (single export, ordered: user-local → brew opts → SDKs)
+# ───────────────────────────────────────────────────────────
+path=(
+  "$PYENV_ROOT/shims"
+  "$PYENV_ROOT/bin"
+  "$BREW_PREFIX/opt/openjdk/bin"
+  "$ANDROID_HOME/emulator"
+  "$ANDROID_HOME/tools"
+  "$ANDROID_HOME/tools/bin"
+  "$ANDROID_HOME/platform-tools"
+  $path
+)
+typeset -U path PATH   # dedupe
 
-# Add paths to PATH variable
-export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
-export PATH=$JAVA_HOME/bin:$PATH
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
-export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
-export PATH="$(brew --prefix)/opt/python@3/libexec/bin:$PATH"
-export PATH="/opt/homebrew/opt/jpeg/bin:$PATH"
+# ───────────────────────────────────────────────────────────
+# Lazy-load nvm (save ~200-400ms startup)
+# ───────────────────────────────────────────────────────────
+NVM_SH="$BREW_PREFIX/opt/nvm/nvm.sh"
+if [[ -s "$NVM_SH" ]]; then
+  _load_nvm() {
+    unset -f nvm node npm npx yarn pnpm corepack 2>/dev/null
+    source "$NVM_SH"
+  }
+  nvm()     { _load_nvm; nvm "$@"; }
+  node()    { _load_nvm; node "$@"; }
+  npm()     { _load_nvm; npm "$@"; }
+  npx()     { _load_nvm; npx "$@"; }
+  yarn()    { _load_nvm; yarn "$@"; }
+  pnpm()    { _load_nvm; pnpm "$@"; }
+  corepack(){ _load_nvm; corepack "$@"; }
+fi
 
-# Homebrew Initialization
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# ───────────────────────────────────────────────────────────
+# pyenv: shims đã ở trong PATH (python/pip chạy ngay).
+# Chỉ defer `pyenv init` (rehash, completion, shell hooks) khi gõ `pyenv`.
+# ───────────────────────────────────────────────────────────
+if [[ -d "$PYENV_ROOT/bin" ]]; then
+  pyenv() {
+    unset -f pyenv
+    eval "$(pyenv init - zsh)"
+    pyenv "$@"
+  }
+fi
 
+# ───────────────────────────────────────────────────────────
+# Plugins & integrations
+# ───────────────────────────────────────────────────────────
 eval "$(zoxide init zsh)"
-# Source
 source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# ───────────────────────────────────────────────────────────
 # Aliases
-alias python=/usr/bin/python3
+# ───────────────────────────────────────────────────────────
 alias g++='g++ -std=c++20'
-## eza
+
 if type eza &>/dev/null; then
   alias l="eza --icons=always"
   alias ls="eza --icons=always"
@@ -58,9 +100,9 @@ if type eza &>/dev/null; then
   alias lta="eza -lTag --icons=always"
   alias lta2="eza -lTag --level=2 --icons=always"
   alias lta3="eza -lTag --level=3 --icons=always"
-else
-  echo ERROR: eza could not be found. Skip setting up eza aliases.
 fi
 
-# Powerlevel10k Configuration
+# ───────────────────────────────────────────────────────────
+# Powerlevel10k user config
+# ───────────────────────────────────────────────────────────
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

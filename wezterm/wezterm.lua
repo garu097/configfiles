@@ -7,8 +7,8 @@ local sizey_frame = '0.14cell'
 
 -- window setting
 config.use_ime = false
-config.window_background_opacity = 0.88
-config.macos_window_background_blur = 28
+config.window_background_opacity = 0.64
+config.macos_window_background_blur = 8
 config.window_padding = {
     left = 4,
     right = 4,

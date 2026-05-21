@@ -106,3 +106,4 @@ fi
 # Powerlevel10k user config
 # ───────────────────────────────────────────────────────────
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local

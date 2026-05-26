@@ -97,6 +97,7 @@ alt-shift-x = 'move-node-to-workspace X'
 
 alt-shift-f = 'fullscreen'
 alt-shift-i = 'exec-and-forget /Users/garu097/.config/aerospace/notify-windows.sh'
+alt-shift-q = 'close'
 alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 

@@ -26,7 +26,10 @@ done < "$LIB_FILE"
 # Link file 
 echo "🚀 Linking configuration files"
 ln -sf "$(pwd)/zsh/config/.zshrc" ~/.zshrc
-ln -sf "$(pwd)/zsh/powerlevel10k/.p10k.zsh" ~/.p10k.zsh
+ln -sf "$(pwd)/zsh/starship/starship.toml" ~/.config/starship.toml
+# ln -sf "$(pwd)/zsh/powerlevel10k/.p10k.zsh" ~/.p10k.zsh
+
+ln -sf "$(pwd)/aespace" ~/.config/aerospace
 ln -sf "$(pwd)/wezterm/wezterm.lua" ~/.wezterm.lua
 ln -sf "$(pwd)/tmux/tmux.conf" ~/.tmux.conf
 ln -sf "$(pwd)/.opencode" ~/.opencode

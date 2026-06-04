@@ -17,6 +17,7 @@ BREW_PREFIX="$(brew --prefix)"
 # Oh My Zsh
 # ───────────────────────────────────────────────────────────
 export ZSH="$HOME/.oh-my-zsh"
+export STARSHIP_CONFIG="$HOME/.config/starship.toml" #starship
 ZSH_DISABLE_COMPFIX=true
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
@@ -79,7 +80,8 @@ fi
 # ───────────────────────────────────────────────────────────
 # Plugins & integrations
 # ───────────────────────────────────────────────────────────
-eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh)". # zoxide
+eval "$(starship init zsh)" # starship
 source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh

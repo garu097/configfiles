@@ -7,7 +7,7 @@ local sizey_frame = '0.14cell'
 
 -- window setting
 config.use_ime = false
-config.window_background_opacity = 0.64
+config.window_background_opacity = 0.8
 config.macos_window_background_blur = 8
 config.window_padding = {
     left = 4,
@@ -16,7 +16,7 @@ config.window_padding = {
     bottom = 4,
 }
 
-config.color_scheme = 'Tokyo Night'
+config.color_scheme = 'tokyonight_night'
 config.font = wezterm.font("0xProto Nerd Font Mono", {weight = "Bold", stretch="Expanded"})
 config.font_size = 14
 config.line_height = 1.5

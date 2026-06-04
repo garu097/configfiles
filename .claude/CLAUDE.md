@@ -7,9 +7,12 @@
 
   ## Tooling
   - I use zsh on macOS
-  - I prefer `uv` over `pip` for Python projects
+  - I prefer using pyenv and .venv for Python project. If .venv exist please load python in .venv
+  <!-- - I prefer `uv` over `pip` for Python projects -->
 
   ## Habits
+  - I prefer using Vietnamese language for communicate with claude 
+  - I prefer using English language when i'm coding
   - I always want to see what command Claude is about to run before it runs in production
 
   ## Sub-agent usage

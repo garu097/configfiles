@@ -8,6 +8,7 @@
   ## Tooling
   - I use zsh on macOS
   - I prefer using pyenv and .venv for Python project. If .venv exist please load python in .venv
+  - I prefer using NVM to manage Node.js versions on my local machine. If you need to run any Node-related commands, please run them in Bash.
   <!-- - I prefer `uv` over `pip` for Python projects -->
 
   ## Habits

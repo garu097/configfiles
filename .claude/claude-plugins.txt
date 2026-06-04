@@ -1,0 +1,6 @@
+# Danh sách Claude Code plugins cần cài trên máy mới.
+# Mỗi dòng: <plugin-name>@<marketplace-name>
+# Dòng trống và dòng bắt đầu bằng # sẽ bị bỏ qua.
+# Marketplace "claude-plugins-official" của Anthropic luôn có sẵn nên không cần khai báo.
+
+claude-md-management@claude-plugins-official

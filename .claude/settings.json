@@ -55,5 +55,8 @@
   "teammateMode": "tmux",
   "preferences": {
     "tmuxSplitPanes": true
+  },
+  "enabledPlugins": {
+    "claude-md-management@claude-plugins-official": true
   }
 }

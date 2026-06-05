@@ -1,13 +1,4 @@
 # ───────────────────────────────────────────────────────────
-# Powerlevel10k instant prompt (must stay near top)
-# ───────────────────────────────────────────────────────────
-# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-# source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
-
-# ───────────────────────────────────────────────────────────
 # Homebrew (sets PATH/MANPATH/INFOPATH for /opt/homebrew)
 # ───────────────────────────────────────────────────────────
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -31,6 +22,14 @@ export JAVA_HOME="$BREW_PREFIX/opt/openjdk/libexec/openjdk.jdk/Contents/Home"
 export GEM_HOME="$HOME/.gem"
 export NVM_DIR="$HOME/.nvm"
 export PYENV_ROOT="$HOME/.pyenv"
+export FZF_DEFAULT_COMMAND="fd --type f"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS='
+  --height=40%
+  --layout=reverse
+  --border
+  --preview "bat --style=numbers --color=always {}"
+'
 
 # ───────────────────────────────────────────────────────────
 # PATH (single export, ordered: user-local → brew opts → SDKs)
@@ -80,6 +79,7 @@ fi
 # ───────────────────────────────────────────────────────────
 # Plugins & integrations
 # ───────────────────────────────────────────────────────────
+eval "$(fzf --zsh)" # fzf
 eval "$(zoxide init zsh)". # zoxide
 eval "$(starship init zsh)" # starship
 source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh

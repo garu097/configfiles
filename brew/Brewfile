@@ -15,6 +15,9 @@ brew "zsh-syntax-highlighting"
 brew "zsh-autosuggestions"
 brew "zsh-autocomplete"
 brew "zoxide"
+brew "fzf" # fuzzy finder
+brew "fd" # find alternative
+brew "bat" # cat alternative
 brew "docker"
 brew "docker-compose"
 brew "mole"

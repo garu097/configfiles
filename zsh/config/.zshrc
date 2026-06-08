@@ -79,13 +79,13 @@ fi
 # ───────────────────────────────────────────────────────────
 # Plugins & integrations
 # ───────────────────────────────────────────────────────────
-eval "$(fzf --zsh)" # fzf
-eval "$(zoxide init zsh)". # zoxide
+eval "$(zoxide init zsh)" # zoxide
 eval "$(starship init zsh)" # starship
 source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+eval "$(fzf --zsh)" # fzf
 # ───────────────────────────────────────────────────────────
 # Aliases
 # ───────────────────────────────────────────────────────────

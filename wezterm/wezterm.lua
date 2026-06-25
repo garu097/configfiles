@@ -24,7 +24,6 @@ config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 config.initial_rows = 40
 config.initial_cols = 280
-config.enable_csi_u_key_encoding = true
 config.window_frame = {
     border_left_width = sizex_frame,
     border_right_width = sizex_frame,

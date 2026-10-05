@@ -34,6 +34,12 @@ ln -sf "$(pwd)/wezterm/wezterm.lua" ~/.wezterm.lua
 ln -sf "$(pwd)/tmux/tmux.conf" ~/.tmux.conf
 ln -sf "$(pwd)/.opencode" ~/.opencode
 
+# Link herdr config (per-item, keep runtime data like session.json/sockets in ~/.config/herdr)
+mkdir -p ~/.config/herdr
+ln -sfn "$(pwd)/herdr/config.toml" ~/.config/herdr/config.toml
+ln -sfn "$(pwd)/herdr/scripts" ~/.config/herdr/scripts
+chmod +x "$(pwd)"/herdr/scripts/*.sh
+
 # Link Claude Code config (per-item, keep runtime data in ~/.claude)
 mkdir -p ~/.claude
 for item in "$(pwd)"/.claude/*; do

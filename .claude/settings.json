@@ -49,14 +49,14 @@
       }
     ]
   },
+  "enabledPlugins": {
+    "claude-md-management@claude-plugins-official": true
+  },
   "effortLevel": "high",
   "skipDangerousModePermissionPrompt": true,
   "theme": "auto",
   "teammateMode": "tmux",
   "preferences": {
     "tmuxSplitPanes": true
-  },
-  "enabledPlugins": {
-    "claude-md-management@claude-plugins-official": true
   }
 }

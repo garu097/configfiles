@@ -66,7 +66,7 @@ move_tab_previous = "prefix+shift+left"
 move_tab_next     = "prefix+shift+right"
 
 # --- spaces / workspaces (== tmux sessions) ----------------------------
-workspace_picker   = "prefix+s"       # tmux: prefix s (choose-tree)
+workspace_picker   = "prefix+w"       # tmux: prefix w (choose-tree), up/down + enter to pick
 new_workspace      = "prefix+shift+n"
 rename_workspace   = "prefix+shift+w" # tmux: prefix $
 close_workspace    = "prefix+shift+d"

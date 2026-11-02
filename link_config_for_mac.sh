@@ -47,8 +47,10 @@ for item in "$(pwd)"/.claude/*; do
     name=$(basename "$item")
     [ "$name" = ".gitignore" ] && continue
     [ "$name" = "settings.local.json" ] && continue
-    ln -sf "$item" "$HOME/.claude/$name"
+    [ "$name" = "install_claude_plugins.sh" ] && continue
+    ln -sfn "$item" "$HOME/.claude/$name"
 done
+bash "$(pwd)/.claude/install_claude_plugins.sh" || echo "⚠️  Cài Claude plugins lỗi, chạy lại sau"
 
 source ~/.zshrc
 

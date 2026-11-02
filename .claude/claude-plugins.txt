@@ -4,3 +4,14 @@
 # Marketplace "claude-plugins-official" của Anthropic luôn có sẵn nên không cần khai báo.
 
 claude-md-management@claude-plugins-official
+frontend-design@claude-plugins-official
+
+# Marketplace bên thứ ba: marketplace <github-repo> (khai báo trước plugin dùng nó)
+marketplace obra/superpowers-marketplace
+superpowers@superpowers-marketplace
+
+marketplace Leonxlnx/taste-skill
+taste-skill@taste-skill
+
+marketplace pbakaus/impeccable
+impeccable@impeccable

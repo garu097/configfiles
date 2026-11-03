@@ -13,5 +13,9 @@ superpowers@superpowers-marketplace
 marketplace Leonxlnx/taste-skill
 taste-skill@taste-skill
 
-marketplace pbakaus/impeccable
-impeccable@impeccable
+# Tạm tắt, thay bằng hallmark
+# marketplace pbakaus/impeccable
+# impeccable@impeccable
+
+marketplace Nutlope/hallmark
+hallmark@hallmark

@@ -49,7 +49,7 @@ while IFS= read -r line || [ -n "$line" ]; do
         continue
     fi
 
-    if jq -e --arg id "$plugin" 'any(.[]; .id == $id)' <<< "$INSTALLED_PLUGINS" >/dev/null; then
+    if jq -e --arg id "$plugin" 'any(.[]; .id == $id and .scope == "user")' <<< "$INSTALLED_PLUGINS" >/dev/null; then
         echo "> Update: $plugin"
         cmd=(claude plugin update "$plugin" --scope user)
     else
